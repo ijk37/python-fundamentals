@@ -1,0 +1,19 @@
+__pycache__/
+.claude
+.git
+.venv/
+.ipynb_checkpoints/
+.Rhistory
+**/desktop.ini
+~$*.xlsx
+~$*.xls
+~$*.xlsm
+*.tmp
+.DS_Store
+Thumbs.db
+*.xlsx
+*.xlsm
+
+# MkDocs build output (never commit)
+_site/
+/site/

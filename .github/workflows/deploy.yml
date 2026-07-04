@@ -1,0 +1,58 @@
+name: Deploy MkDocs site
+
+# Builds the MkDocs (Material) site and publishes it to GitHub Pages.
+# One-time setup: repo Settings -> Pages -> Build and deployment ->
+#   Source = "GitHub Actions".
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install site build dependencies
+        run: pip install -r requirements-docs.txt
+
+      - name: Finalize markdown (fix nav, links, images)
+        run: python tools/finalize.py
+
+      - name: Build site
+        run: mkdocs build --site-dir _site
+        env:
+          DISABLE_MKDOCS_2_WARNING: "true"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,238 @@
+site_name: Python — Fundamentals
+site_description: A self-paced Python fundamentals course — notes, exercises, quizzes, and 23 hands-on projects, from first setup through modules and packages.
+site_author: Jahid
+site_url: https://ijk37.com/python-fundamentals/
+
+repo_name: ijk37/python-fundamentals
+repo_url: https://github.com/ijk37/python-fundamentals
+edit_uri: edit/main/
+
+docs_dir: .
+site_dir: ../python-fundamentals-site
+use_directory_urls: false
+exclude_docs: |
+  mkdocs.yml
+  requirements.txt
+  requirements-docs.txt
+  .gitignore
+  .claude/**
+  .git/**
+  .venv/**
+  .ipynb_checkpoints/**
+  05-resources/**
+  !05-resources/README.md
+  tools/**
+  assets/site_design.md
+  01-notes.md
+  02-exercises.md
+  03-quiz.md
+  04-projects.md
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/images/python-logo.svg
+  favicon: assets/images/favicon.svg
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - navigation.footer
+    - navigation.indexes
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+plugins:
+  - same-dir
+  - search
+  - callouts
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/extra.js
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ijk37/python-fundamentals
+      name: GitHub repository
+
+not_in_nav: |
+  README.md
+
+nav:
+  - Home: index.md
+  - Notes:
+      - Overview: 01-notes/README.md
+      - "01 · Setup & Environment":
+          - "What & Why Python": 01-notes/01-01-what-and-why-python.md
+          - "What Is an IDE": 01-notes/01-02-IDE.md
+          - "Platforms & IDEs": 01-notes/01-03-python-platforms-and-ides.md
+          - "Environment Setup": 01-notes/01-04-environment-setup.md
+          - "Write & Run Code in VS Code": 01-notes/01-05-write-execute-python-code-in-vscode.md
+      - "02 · Core Language":
+          - "Basic Syntax": 01-notes/02-01-basic-syntax.md
+          - "Variables & Data Types": 01-notes/02-02-variables-and-datatypes.md
+          - "Input & Output": 01-notes/02-03-input-output.md
+          - "Operators": 01-notes/02-04-operators.md
+          - "Number Types (int, float)": 01-notes/02-05-number-types-int-float.md
+          - "String Basics": 01-notes/02-06-string-basics.md
+          - "String Methods": 01-notes/02-07-string-methods.md
+          - "String Formatting": 01-notes/02-08-string-formatting.md
+          - "Booleans & None": 01-notes/02-09-boolean-and-none.md
+          - "Type Conversion": 01-notes/02-10-type-conversion.md
+      - "03 · Control Flow":
+          - "if / elif / else": 01-notes/03-01-if-elif-else.md
+          - "for Loops": 01-notes/03-02-for-loops.md
+          - "while Loops": 01-notes/03-03-while-loops.md
+      - "04 · Functions":
+          - "Functions Basics": 01-notes/04-01-functions-basics.md
+      - "05 · Data Structures":
+          - "Lists": 01-notes/05-01-lists.md
+          - "Tuples": 01-notes/05-02-tuples.md
+          - "Sets": 01-notes/05-03-sets.md
+          - "Dictionaries": 01-notes/05-04-dictionaries.md
+          - "Slicing": 01-notes/05-05-slicing.md
+          - "Data Structures Comparison": 01-notes/05-06-data-structures-comparison.md
+          - "zip, enumerate & Conversions": 01-notes/05-07-zip-enumerate-and-conversions.md
+      - "06 · Comprehensions & Exceptions":
+          - "Comprehensions": 01-notes/06-01-comprehensions.md
+          - "Exception Handling": 01-notes/06-02-exception-handling.md
+      - "07 · File I/O":
+          - "File I/O Basics": 01-notes/07-01-file-io.md
+          - "CSV Files": 01-notes/07-02-csv-files.md
+          - "JSON Files": 01-notes/07-03-json-files.md
+          - "Excel Files": 01-notes/07-04-excel-files.md
+          - "PDF Files": 01-notes/07-05-pdf-files.md
+          - "pathlib & Filesystem": 01-notes/07-06-pathlib-and-filesystem.md
+      - "08 · Modules & Packages":
+          - "Modules & Imports": 01-notes/08-01-modules-and-imports.md
+          - "Module Structure": 01-notes/08-02-module-structure.md
+          - "Python Ecosystem & Libraries": 01-notes/08-03-python-ecosystem-libraries.md
+  - Exercises:
+      - Overview: 02-exercises/README.md
+      - "02 · Core Language":
+          - "Basic Syntax": 02-exercises/02-01-basic-syntax-exe.md
+          - "Variables & Data Types": 02-exercises/02-02-variables-and-datatypes-exe.md
+          - "Input & Output": 02-exercises/02-03-input-output-exe.md
+          - "Operators": 02-exercises/02-04-operators-exe.md
+          - "Number Types (int, float)": 02-exercises/02-05-number-types-int-float-exe.md
+          - "String Basics": 02-exercises/02-06-string-basics-exe.md
+          - "String Methods": 02-exercises/02-07-string-methods-exe.md
+          - "String Formatting": 02-exercises/02-08-string-formatting-exe.md
+          - "Booleans & None": 02-exercises/02-09-boolean-and-none-exe.md
+          - "Type Conversion": 02-exercises/02-10-type-conversion-exe.md
+      - "03 · Control Flow":
+          - "if / elif / else": 02-exercises/03-01-if-elif-else-exe.md
+          - "for Loops": 02-exercises/03-02-for-loops-exe.md
+          - "while Loops": 02-exercises/03-03-while-loops-exe.md
+      - "04 · Functions":
+          - "Functions Basics": 02-exercises/04-01-functions-basics-exe.md
+      - "05 · Data Structures":
+          - "Lists": 02-exercises/05-01-lists-exe.md
+          - "Tuples": 02-exercises/05-02-tuples-exe.md
+          - "Sets": 02-exercises/05-03-sets-exe.md
+          - "Dictionaries": 02-exercises/05-04-dictionaries-exe.md
+          - "Slicing": 02-exercises/05-05-slicing-exe.md
+          - "zip, enumerate & Conversions": 02-exercises/05-07-zip-enumerate-and-conversions-exe.md
+      - "06 · Comprehensions & Exceptions":
+          - "Comprehensions": 02-exercises/06-01-comprehensions-exe.md
+          - "Exception Handling": 02-exercises/06-02-exception-handling-exe.md
+      - "07 · File I/O":
+          - "File I/O Basics": 02-exercises/07-01-file-io-exe.md
+          - "CSV Files": 02-exercises/07-02-csv-files-exe.md
+          - "JSON Files": 02-exercises/07-03-json-files-exe.md
+          - "Excel Files": 02-exercises/07-04-excel-files-exe.md
+          - "PDF Files": 02-exercises/07-05-pdf-files-exe.md
+          - "pathlib & Filesystem": 02-exercises/07-06-pathlib-and-filesystem-exe.md
+      - "08 · Modules & Packages":
+          - "Modules & Imports": 02-exercises/08-01-modules-and-imports-exe.md
+          - "Module Structure": 02-exercises/08-02-module-structure-exe.md
+  - Quiz: 03-quiz/index.html
+  - Projects:
+      - Overview: 04-projects/README.md
+      - "01 · Mad Libs Story Generator": 04-projects/04-01-mad-libs-story-generator/README.md
+      - "02 · BMI Calculator": 04-projects/04-02-bmi-calculator/README.md
+      - "03 · Currency Converter": 04-projects/04-03-currency-converter/README.md
+      - "04 · Number Guessing Game": 04-projects/04-04-number-guessing-game/README.md
+      - "05 · Times Table Generator": 04-projects/04-05-times-table-generator/README.md
+      - "06 · Student Grade Calculator": 04-projects/04-06-student-grade-calculator/README.md
+      - "07 · Password Strength Checker": 04-projects/04-07-password-strength-checker/README.md
+      - "08 · Shopping Cart": 04-projects/04-08-shopping-cart/README.md
+      - "09 · Hangman Game": 04-projects/04-09-hangman-game/README.md
+      - "10 · Caesar Cipher": 04-projects/04-10-caesar-cipher/README.md
+      - "11 · Text Statistics Analyzer": 04-projects/04-11-text-statistics-analyzer/README.md
+      - "12 · Contact Book CLI": 04-projects/04-12-contact-book-cli/README.md
+      - "13 · Inventory Manager": 04-projects/04-13-inventory-manager/README.md
+      - "14 · Safe Math Calculator": 04-projects/04-14-safe-math-calculator/README.md
+      - "15 · Personal Diary App": 04-projects/04-15-personal-diary-app/README.md
+      - "16 · CSV Student Report": 04-projects/04-16-csv-student-report/README.md
+      - "17 · JSON Expense Tracker": 04-projects/04-17-json-expense-tracker/README.md
+      - "18 · File Organizer": 04-projects/04-18-file-organizer/README.md
+      - "19 · Math Utilities Package": 04-projects/04-19-math-utilities-package/README.md
+      - "20 · Quiz Game": 04-projects/04-20-quiz-game/README.md
+      - "21 · Number System Explorer": 04-projects/04-21-number-system-explorer/README.md
+      - "22 · Encryption Toolkit": 04-projects/04-22-encryption-toolkit/README.md
+      - "23 · Expense Tracker (Full)": 04-projects/04-23-expense-tracker-full/README.md
+  - Resources: 05-resources/README.md

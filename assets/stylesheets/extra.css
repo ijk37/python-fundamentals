@@ -1,0 +1,155 @@
+/* ── Python: Fundamentals · blue & yellow theme ──────────────────────────── */
+
+:root {
+  --py-blue: #306998;
+  --py-blue-dark: #1e4b73;
+  --py-blue-bright: #4b8bc4;
+  --py-yellow: #ffd43b;
+  --py-yellow-deep: #e6b800;
+  --py-yellow-soft: #ffe873;
+  --py-ink: #1e293b;
+  --py-border: rgba(30, 41, 59, 0.14);
+
+  /* Drive Material's primary (header/nav/footer) and accent (links/hover) */
+  --md-primary-fg-color: #306998;
+  --md-primary-fg-color--light: #4b8bc4;
+  --md-primary-fg-color--dark: #1e4b73;
+  --md-accent-fg-color: #e6b800;
+}
+
+[data-md-color-scheme="slate"] {
+  --py-border: rgba(255, 255, 255, 0.16);
+  --md-primary-fg-color: #306998;
+  --md-primary-fg-color--light: #4b8bc4;
+  --md-primary-fg-color--dark: #1e4b73;
+  --md-accent-fg-color: #ffd43b; /* brighter yellow reads better on dark */
+  --md-typeset-a-color: #ffd43b;
+}
+
+.md-header,
+.md-tabs {
+  box-shadow: none;
+}
+
+/* yellow hairline under the header/tabs for the two-tone look */
+.md-tabs {
+  border-bottom: 3px solid var(--py-yellow);
+}
+
+.md-header__title {
+  font-weight: 700;
+}
+
+.md-typeset h1,
+.md-typeset h2 {
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+.md-typeset h1 {
+  margin-bottom: 0.9rem;
+  color: var(--py-blue);
+}
+
+[data-md-color-scheme="slate"] .md-typeset h1 {
+  color: var(--py-yellow);
+}
+
+.md-typeset h2 {
+  border-bottom: 2px solid var(--py-yellow);
+  padding-bottom: 0.35rem;
+}
+
+.md-typeset table:not([class]) {
+  border: 1px solid var(--py-border);
+  border-radius: 0.4rem;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--py-blue);
+  color: #fff;
+  font-weight: 700;
+}
+
+.md-typeset code {
+  border-radius: 0.25rem;
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.45rem;
+}
+
+/* colored left rule on blockquotes for a little warmth */
+.md-typeset blockquote {
+  border-left: 0.2rem solid var(--py-yellow);
+}
+
+/* ── Home hero cards ──────────────────────────────────────────────────── */
+.py-hero-grid {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  margin: 1.5rem 0 2rem;
+}
+
+.md-typeset .py-card {
+  align-items: center;
+  border: 1px solid var(--py-border);
+  border-left: 0.35rem solid var(--py-blue);
+  border-radius: 0.5rem;
+  color: var(--md-default-fg-color);
+  display: flex;
+  font-size: 1.05rem;
+  font-weight: 700;
+  gap: 0.55rem;
+  min-height: 5rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+}
+
+.md-typeset .py-card:hover {
+  border-color: var(--py-yellow);
+  box-shadow: 0 0.55rem 1.4rem rgba(30, 75, 115, 0.22);
+  transform: translateY(-2px);
+}
+
+.md-typeset .py-card-notes {
+  border-left-color: var(--py-blue);
+}
+
+.md-typeset .py-card-exercises {
+  border-left-color: var(--py-yellow-deep);
+}
+
+.md-typeset .py-card-quiz {
+  border-left-color: var(--py-blue-bright);
+}
+
+.md-typeset .py-card-projects {
+  border-left-color: var(--py-yellow);
+}
+
+.md-typeset .py-card-resources {
+  border-left-color: var(--py-blue-dark);
+}
+
+.md-nav__item .md-nav__link--active {
+  font-weight: 700;
+}
+
+.md-footer {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .py-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .md-typeset .py-card {
+    min-height: 4.25rem;
+  }
+}
