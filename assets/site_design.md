@@ -1,4 +1,4 @@
-# Site Design Blueprint
+﻿# Site Design Blueprint
 
 How this repository is structured so that **one set of Markdown files works two ways at once**:
 
@@ -270,3 +270,20 @@ QUESTIONS["01"] = [
 6. **Add the CI workflow** and set **Pages Source = GitHub Actions**.
 7. **Wire the domain** (user-site cascade) and set `site_url` + the repo's About → Website field.
 8. **Verify:** `python tools/finalize.py && python -m mkdocs build` with **zero warnings**, then check the deployed nav, links, and the quiz app.
+### Cross-site hub navigation
+
+Each course homepage starts with a right-aligned `.resource-hub-nav` button group immediately below the intro copy and before the course card grid:
+
+```markdown
+<div class="resource-hub-nav" markdown>
+
+[:octicons-home-16: Home](https://ijk37.com/){ .hub-nav-button .hub-nav-home }
+
+[:octicons-graph-16: Data Science & AI](https://ijk37.com/data-science-ai/){ .hub-nav-button .hub-nav-dsai }
+
+[:octicons-shield-lock-16: Cyber Security](https://ijk37.com/cyber-security/){ .hub-nav-button .hub-nav-cyber }
+
+</div>
+```
+
+The button styling lives in `assets/stylesheets/extra.css`. Keep the buttons as Markdown links inside a `markdown`-enabled div so MkDocs Material processes the Octicons and `attr_list` classes consistently. The Home button uses the local course theme color; the two hub buttons use the portfolio hub colors: Data Science & AI `#34526b`, Cyber Security `#b4122e`.

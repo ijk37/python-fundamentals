@@ -1,4 +1,4 @@
----
+﻿---
 hide:
   - navigation
 ---
@@ -7,6 +7,15 @@ hide:
 
 A self-paced Python course organized for fast review, deliberate practice, and hands-on building. The material covers core Python — from first installation through control flow, functions, data structures, file I/O, and modules.
 
+<div class="resource-hub-nav" markdown>
+
+[:octicons-home-16: Home](https://ijk37.com/){ .hub-nav-button .hub-nav-home }
+
+[:octicons-graph-16: Data Science & AI](https://ijk37.com/data-science-ai/){ .hub-nav-button .hub-nav-dsai }
+
+[:octicons-shield-lock-16: Cyber Security](https://ijk37.com/cyber-security/){ .hub-nav-button .hub-nav-cyber }
+
+</div>
 <div class="py-hero-grid" markdown>
 
 [:octicons-book-16: Notes](01-notes/README.md){ .py-card .py-card-notes }
